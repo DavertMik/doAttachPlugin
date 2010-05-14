@@ -11,13 +11,13 @@ Principles
 
 Use cases
 ---------
-* user avatars
-* forum posts
-* product and company logos
-etc
+* store user avatars
+* attach files to forum posts
+* save product and company logos
+* etc..
 
 API
-----	  
+---------	  
 Adds several methods to object
 * attach($file) - assigns file as attached. A previously attached file removed
 * getFilename() - gets a name of file as it was uploaded by user
