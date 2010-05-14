@@ -19,6 +19,7 @@ Use cases
 API
 ---------	  
 Adds several methods to object
+
 * attach($file) - assigns file as attached. A previously attached file removed
 * getFilename() - gets a name of file as it was uploaded by user
 * getFilePath() - gets a full path to file
@@ -28,25 +29,25 @@ Example
 -------
 * Define and build a model
 
-     Contractor:
-       actAs: [Timestampable, Attachable]
-       columns:
-         user_id:    { type: integer(4), notnull: true, primary: true }
-         company: {type: string(255) }
-         contact_email: {type: string(255)}
-         phone: {type: string(255)}
+       Contractor:
+         actAs: [Timestampable, Attachable]
+         columns:
+           user_id:    { type: integer(4), notnull: true, primary: true }
+           company: {type: string(255) }
+           contact_email: {type: string(255)}
+           phone: {type: string(255)}
 
 * Recieve uploaded file in controller
 
-     [php]
-      $contractor = new Contractor();
-      $contractor->attach($request->getFile('file');
-	  $contractor->save();
+       [php]
+        $contractor = new Contractor();
+        $contractor->attach($request->getFile('file');
+	    $contractor->save();
 	  
 * Use file access API in templates
 
-      [php] 
-      link_to($contractor->getFilename(),$contractor->getFileUrl()); 
+        [php] 
+        link_to($contractor->getFilename(),$contractor->getFileUrl()); 
 
 In Forms
 --------
